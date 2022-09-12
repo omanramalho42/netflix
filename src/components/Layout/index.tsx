@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Container } from './styled';
+
 interface LayoutProps {
   title: string;
   description: string;
@@ -14,9 +16,9 @@ const Layout = ({ title, description, children }: LayoutProps) => {
         <meta title={description} />
         <link charSet='utf8'/>
       </head>
-      <body>
+      <Container>
         { children }
-      </body>
+      </Container>
     </>
   )
 }
