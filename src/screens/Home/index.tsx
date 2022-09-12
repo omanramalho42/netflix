@@ -1,7 +1,12 @@
-import React from 'react'
-import { Header, Layout, Movies } from '../../components'
+import React from 'react';
 
-import { Container } from './styled'
+import { 
+  Header, 
+  Layout, 
+  Movies 
+} from '../../components';
+
+import { Container } from './styled';
 
 const Home: React.FC = () => {
   return (
