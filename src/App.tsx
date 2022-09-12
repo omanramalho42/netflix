@@ -8,6 +8,7 @@ import { Dark, Light } from './style/theme';
 // import { ThemeProvider } from 'styled-components';
 
 import { ThemeProvider } from './context/ThemeContext';
+import Routes from './Routes';
 
 export const MoviesGrid = (children: any) => {
   return (
@@ -21,8 +22,7 @@ const App:React.FC = () => {
   return (
     <ThemeProvider>
       <Layout title="Home" description="home">
-        <Header />
-        <Movies />
+        <Routes />
         <GlobalStyle />
       </Layout>
     </ThemeProvider>
