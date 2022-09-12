@@ -1,5 +1,9 @@
 import React from 'react';
+
+import { GlobalStyle } from './style/global';
+
 import { Layout, Movies } from "./components";
+
 
 export const MoviesGrid = (children: any) => {
   return (
@@ -15,11 +19,10 @@ const App:React.FC = () => {
       <h1 style={{ textAlign: 'center', fontSize: 50 }}>
         Welcome to my app netflix 🦇
       </h1>
-      <div>
-        <MoviesGrid>
-          <Movies />
-        </MoviesGrid>
-      </div>
+      {/* <MoviesGrid>
+        <Movies />
+      </MoviesGrid> */}
+      <GlobalStyle />
     </Layout>
   );
 };
