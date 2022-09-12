@@ -1,8 +1,7 @@
-import { useContext } from "react"
+import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
 const ToggleSwitch = () => {
-
   const { toggleTheme } = useContext(ThemeContext);
 
   return (

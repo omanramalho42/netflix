@@ -24,12 +24,15 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     const savedTheme: any = await localStorage.getItem('@theme');
     if(savedTheme) {
       setTheme(JSON.parse(savedTheme));
+    } else {
+      setTheme(Light);
     }
   }
 
   const toggleTheme = useCallback(() => {
-    let mode;
-    if(theme === Light) {
+    console.log('click')
+    let mode = {};
+    if(theme.title === 'light') {
       setTheme(Dark);
       mode = Dark;
     } else {
