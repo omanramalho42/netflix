@@ -30,7 +30,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   }
 
   const toggleTheme = useCallback(() => {
-    console.log('click')
     let mode = {};
     if(theme.title === 'light') {
       setTheme(Dark);

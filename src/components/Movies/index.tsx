@@ -1,9 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const Movies = () => {
+const Movies: React.FC = () => {
+
+  const [movies, setMovies] = useState();
+  const fetchMovies = async () => {
+    try {
+      await axios.get('http://localhost:3000/api/movies', { headers: { token: `Bearer ` }})
+        .then((res: any) => setMovies(res))
+        .catch((error) => console.log(error)
+      );
+  
+      console.log(movies,' movies');
+    } catch (error) {
+      throw error;
+    }
+  }
+  useEffect(() => {
+    fetchMovies();
+  },[])
+  
   return (
     <div>
-      Movies
+      <h1>Movies</h1>
     </div>
   )
 }

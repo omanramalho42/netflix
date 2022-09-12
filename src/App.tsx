@@ -22,6 +22,7 @@ const App:React.FC = () => {
     <ThemeProvider>
       <Layout title="Home" description="home">
         <Header />
+        <Movies />
         <GlobalStyle />
       </Layout>
     </ThemeProvider>
