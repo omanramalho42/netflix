@@ -28,12 +28,16 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   }
 
   const toggleTheme = useCallback(() => {
+    let mode;
     if(theme === Light) {
       setTheme(Dark);
+      mode = Dark;
     } else {
       setTheme(Light);
+      mode = Light;
     }
-    localStorage.setItem('@theme', JSON.stringify(theme));
+    
+    localStorage.setItem('@theme', JSON.stringify(mode));
   },[theme]);
 
   return (
