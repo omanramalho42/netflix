@@ -1,6 +1,7 @@
+import { DefaultTheme } from "styled-components";
 import { ThemeProps } from "./styled";
 
-const Dark: ThemeProps = {
+const Dark: DefaultTheme = {
   title: 'dark',
   colors: {
     primary: '#000',

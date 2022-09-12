@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { GlobalStyle } from './style/global';
 
-import { Layout, Movies } from "./components";
+import { Header, Layout, Movies } from "./components";
 
-import { DefaultTheme, ThemeProvider } from 'styled-components';
 import { Dark, Light } from './style/theme';
+// import { ThemeProvider } from 'styled-components';
+
+import { ThemeProvider } from './context/ThemeContext';
 
 export const MoviesGrid = (children: any) => {
   return (
@@ -15,29 +17,11 @@ export const MoviesGrid = (children: any) => {
   );
 };
 
-
 const App:React.FC = () => {
-
-  const [theme, setTheme] = useState<DefaultTheme>(Light);
-  const handleToggleTheme = () => {
-    setTheme((theme) => theme === Light ? Dark : Light);
-  }
-
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <Layout title="Home" description="home">
-        <h1 style={{ textAlign: 'center', fontSize: 50 }}>
-          Welcome to my app netflix 🦇
-        </h1>
-        <button 
-          style={{ padding: 10, borderRadius: 15, background: 'red' }} 
-          onClick={handleToggleTheme}
-        >
-          toggle theme
-        </button>
-        {/* <MoviesGrid>
-          <Movies />
-        </MoviesGrid> */}
+        <Header />
         <GlobalStyle />
       </Layout>
     </ThemeProvider>

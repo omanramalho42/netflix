@@ -9,5 +9,11 @@ export interface ThemeProps {
 }
 
 declare module 'styled-components' {
-  export interface DefaultTheme extends ThemeProps {}
+  export interface DefaultTheme {
+    title: 'dark' | 'light';
+    colors: {
+      primary: string;
+      secondary: string;
+    }
+  }
 }

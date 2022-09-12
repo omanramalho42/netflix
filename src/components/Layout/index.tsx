@@ -12,9 +12,9 @@ const Layout = ({ title, description, children }: LayoutProps) => {
   return (
     <>
       <head>
-        <title>{ title }</title>
-        <meta title={description} />
-        <link charSet='utf8'/>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <Container>
         { children }
