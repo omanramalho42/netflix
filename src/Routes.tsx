@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { BrowserRouter, Routes as Router, Route } from 'react-router-dom'
+import { BrowserRouter, Routes as Router, Route } from 'react-router-dom';
 
-import Home from './screens/Home';
+import Home from './screens/Home/Home';
 
 const Routes:React.FC = () => {
   return (
