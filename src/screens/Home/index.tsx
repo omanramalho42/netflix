@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     >
       <Container>
         <Header />
-        <Movies />
+        {/* <Movies /> */}
       </Container>
     </Layout>
   )

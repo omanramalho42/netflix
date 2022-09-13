@@ -165,7 +165,7 @@ const Movies: React.FC = () => {
           <label style={{ padding: 10, margin: 20 }}>{title} | {type}</label>
           <CardList>
             {content.map((item, idx) => movies.map((i) => i._id.includes(item[index]) && (
-              <Card >
+              <Card>
                 <Title>{ i.title || ''}</Title>
                 <Description>{ i.desc || '' }</Description> 
               </Card>
