@@ -12,6 +12,16 @@ export const Container = styled.header`
   padding: 15px 10px;
 `;
 
+export const Content = styled.div`
+  display: flex; 
+  flex-direction: column; 
+  
+  justify-content: center; 
+  align-items: center;
+
+  padding: 10px;
+`;
+
 export const HeaderBar = styled.nav`
   display: flex;
   flex: 1;
@@ -33,18 +43,33 @@ interface MenuItemProps {
 export const Item = styled.li<MenuItemProps>`
   padding: 10px;
 
-  color: ${({ theme }) => theme.colors.secondary};
-
-  font-weight: bold;
+  margin: 10px;
   
-  transition: 0.325s;
-  &:hover {
-    color: ${({ theme }) => 'red'};
-  }
-
   span {
-    padding: 5px;
-    border-bottom: ${({ active }) => active && `2px solid red`};
+    display: inline-block;   
+    
+    color: ${({ theme }) => theme.colors.secondary};
+    font-weight: bold;
+    font-size: 1.5em;
+
+    transition: 0.325s;
+    &:hover {
+      color: ${({ theme }) => theme.colors.effect};
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: ${({ theme }) => theme.colors.effect};;
+      transition: width .3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+      //transition: width .3s;
+    }
   }
 
   cursor: pointer;
@@ -55,6 +80,22 @@ export const Logo = styled.div`
   padding: 10px;
 
   cursor: pointer;
+  
+  
+  /* animation-duration: 3s;
+  animation-name: slidein;
+
+  @keyframes slidein {
+    from {
+      margin-top: 100%;
+      width: 100%
+    }
+
+    to {
+      margin-top: 0%;
+      width: 0%;
+    }
+  } */
 `;
 
 export const Title = styled.h1`

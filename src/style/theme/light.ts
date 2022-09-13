@@ -1,11 +1,12 @@
 import { DefaultTheme } from "styled-components";
-import { ThemeProps } from "./styled"
 
 const Light: DefaultTheme = {
   title: 'light',
   colors: {
     primary: '#fffff',
-    secondary: '#d9d9d9',
+    secondary: '#000',
+
+    effect: 'rgba(0,0,255)',
 
     header: '#f9f9f9'
   }

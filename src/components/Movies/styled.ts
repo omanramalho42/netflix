@@ -17,8 +17,6 @@ export const Container = styled.div`
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 
-  background-color: red;
-
   margin-top: 15px;
 
   padding: 40px;
@@ -32,8 +30,6 @@ export const ContainerList = styled.div<ContainerListProps>`
   display: grid;
   grid-template-columns: repeat(movies, 1fr);
 
-  background-color: transparent;
-
   padding: 40px;
 `;
 
@@ -46,11 +42,12 @@ export const Card = styled.div<CardProps>`
   flex-direction: column;
 
   justify-content: space-between;
+  align-items: center;
 
   padding: 30px;
   
   background-image: url(${({ img }) => img });
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
   
   border-radius: 15px;
 
@@ -81,8 +78,6 @@ export const CardList = styled.div`
 
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-
-  background-color: ${({ theme }) => theme.colors.secondary};
   
   border-radius: 15px;
   box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.1);
@@ -121,7 +116,7 @@ export const Filter = styled.input.attrs({
   font-size: 1em;
   
   color: ${({ theme }) => theme.colors.header};
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
 
   padding: 5px;
 
@@ -133,22 +128,54 @@ export const GenreFilterContainer = styled.div`
   display: flex;
   flex-direction: column;
 
+  
   margin: auto;
-
+  
   align-items: center;
   justify-content: space-around;
 
   padding: 2px 5px;
 `;
 
+export const Label = styled.label`
+  margin: 10px 0;
+  font-size: 1em;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
 export const GenreFilter = styled.select`
   font-size: 1em;
   
   color: ${({ theme }) => theme.colors.header};
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.secondary};
 
   padding: 5px;
 
   border: none;
   border-radius: 10px;
+
+  border: none;
+
+  option {
+    color: ${({ theme }) => theme.colors.primary};
+
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size: 0.9em;
+  }
+`;
+
+export const Avaliation = styled.div`
+  display: flex;
+
+  background-color: ${({ theme }) => theme.colors.header}; 
+  border-radius: 15px;
+  
+  padding: 10px;
+
+  span {
+    color: ${({ theme }) => theme.colors.effect};
+  }
+  
 `;

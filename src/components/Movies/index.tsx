@@ -9,10 +9,12 @@ import {
   Title,
   Description,
   Filter,
+  Label,
   FilterContainer,
   GenreFilterContainer,
   GenreFilter,
-  CardList
+  CardList,
+  Avaliation
 } from './styled';
 
 interface MovieProps {
@@ -38,7 +40,6 @@ interface ListProps {
   __v: number;
   _id : string;
 };
-
 
 interface GenreProps {
   genre: 'action' | 'horror' | 'comedy';
@@ -120,7 +121,7 @@ const Movies: React.FC = () => {
   return (
     <>
       <FilterContainer>
-        <span>filtro</span>
+        <Label>filtro</Label>
         <Filter 
           value={filter} 
           onChange={
@@ -130,7 +131,7 @@ const Movies: React.FC = () => {
       </FilterContainer>
 
       <GenreFilterContainer>
-        <label>genero: </label>
+        <Label>genero: </Label>
         <GenreFilter 
           name='genres' 
           id='genres' 
@@ -154,13 +155,13 @@ const Movies: React.FC = () => {
             >
               <Title>{ i.title }</Title>
               <Description>{ learningMore(i.desc) }</Description>
-              <input type='range' value={i.avaliation} readOnly />
+              <Avaliation> <span>{i.avaliation}</span> </Avaliation>
             </Card>
           ))}
         </Container>
       )}
       
-      {lists?.map(({ title, type, content, _id }, index) => content && (
+      {/* {lists?.map(({ title, type, content, _id }, index) => content && (
         <ContainerList movies={content.length} key={`${index}${_id}`}>
           <label style={{ padding: 10, margin: 20 }}>{title} | {type}</label>
           <CardList>
@@ -172,7 +173,8 @@ const Movies: React.FC = () => {
             )))}
           </CardList>
         </ContainerList>
-      ))}
+      ))} */}
+      
     </>
   )
 }

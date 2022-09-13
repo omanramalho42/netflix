@@ -18,6 +18,7 @@ declare module 'styled-components' {
       secondary: string;
 
       header: string;
+      effect: string;
     }
   }
 }

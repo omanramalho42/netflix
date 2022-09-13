@@ -1,11 +1,16 @@
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
 
 import ToggleSwitch from '../ToggleSwitch';
 import { Container } from './styled';
 
 import { Link, useLocation } from 'react-router-dom';
 
-import { 
+import {
+  Content,
   HeaderBar, 
   Item, 
   Menu, 
@@ -46,8 +51,8 @@ const Header:React.FC = () => {
       <div ref={headerRef} style={{ display: 'flex', width: '100%' }}>
         <HeaderBar>
           <Logo style={{ display: 'flex' }}>
-            <img src={''} alt='logo' />
-            <Link to=''>Movies</Link>
+            <img src={'https://down.imgspng.com/download/0720/netflix_PNG22.png'} alt='logo' style={{ width: '200px' }} />
+            {/* <Link to=''>Movies</Link> */}
           </Logo>
 
           <Menu>
@@ -57,7 +62,7 @@ const Header:React.FC = () => {
                   key={i} 
                   className={`${i === active ? 'active' : ''}`}
                 >
-                  <span>
+                  <span className='cool-link'>
                     { e.display }
                   </span>
                 </Item>
@@ -67,20 +72,26 @@ const Header:React.FC = () => {
         </HeaderBar>
       </div>
 
-      <div 
-        style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          justifyContent: 'center', 
-          alignItems: 'center',
-          padding: 10
-        }}
-      >
+      <Content>
         <Title>
           Welcome to my app netflix 🦇
         </Title>
         <ToggleSwitch />
-      </div>
+      </Content>
+
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={3}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        ...
+      </Swiper>
+      
     </Container>
   )
 }
