@@ -3,7 +3,8 @@ import React from 'react';
 import { 
   Header, 
   Layout, 
-  Movies 
+  Movies,
+  MovieSlider
 } from '../../components';
 
 import { Container } from './styled';
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
     >
       <Container>
         <Header />
+        <MovieSlider />
         <Movies />
       </Container>
     </Layout>
