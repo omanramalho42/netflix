@@ -5,7 +5,9 @@ const Light: DefaultTheme = {
   title: 'light',
   colors: {
     primary: '#fffff',
-    secondary: '#d9d9d9'
+    secondary: '#d9d9d9',
+
+    header: '#f9f9f9'
   }
 }
 

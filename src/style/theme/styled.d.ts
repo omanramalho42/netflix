@@ -5,6 +5,8 @@ export interface ThemeProps {
   colors: {
     primary: string;
     secondary: string;
+
+    header: string;
   }
 }
 
@@ -14,6 +16,8 @@ declare module 'styled-components' {
     colors: {
       primary: string;
       secondary: string;
+
+      header: string;
     }
   }
 }
