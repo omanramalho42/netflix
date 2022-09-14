@@ -8,7 +8,6 @@ import { Container } from './styled';
 import Button from '../Button';
 
 import './style.scss';
-import Header from '../Header';
 
 const MovieSlider:React.FC = () => {
   SwiperCore.use([Autoplay]);

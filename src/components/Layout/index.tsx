@@ -1,7 +1,8 @@
-import React from 'react'
-import Header from '../Header';
+import React, { useState, useEffect} from 'react'
 
 import { Container } from './styled';
+
+import { Loading } from '../';
 
 interface LayoutProps {
   title: string;
@@ -10,6 +11,13 @@ interface LayoutProps {
 }
 
 const Layout = ({ title, description, children }: LayoutProps) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => 
+      setLoading(false), 15000
+    );
+  },[]);
   return (
     <>
       <head>
@@ -18,7 +26,13 @@ const Layout = ({ title, description, children }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <Container>
-        { children }
+        { loading ? (
+          <Loading />
+        ) : (
+          <>
+            { children }
+          </>
+        )}
       </Container>
     </>
   )
