@@ -49,7 +49,7 @@ const Header:React.FC = () => {
       <div ref={headerRef} style={{ display: 'flex', width: '100%' }}>
         <HeaderBar>
           <Logo style={{ display: 'flex' }}>
-            <img src={'https://down.imgspng.com/download/0720/netflix_PNG22.png'} alt='logo' style={{ width: '200px' }} />
+            <img src={'https://down.imgspng.com/download/0720/netflix_PNG22.png'} alt='logo' style={{ width: '125px' }} />
             {/* <Link to=''>Movies</Link> */}
           </Logo>
 
@@ -70,13 +70,13 @@ const Header:React.FC = () => {
         </HeaderBar>
       </div>
 
-      <Content>
+      {/* <Content>
 
         <Title>
           Welcome to my app netflix 🦇
         </Title>
         <ToggleSwitch />
-      </Content>
+      </Content> */}
 
     </Container>
   )

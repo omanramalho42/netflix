@@ -2,6 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   display: flex;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: height 0.3s ease, background-color 0.3s ease;
+  
   flex-direction: column;
   
   background-color: ${({ theme }) => 'transparent'};
@@ -49,9 +57,7 @@ export const Item = styled.li<MenuItemProps>`
     display: inline-block;   
     
     color: ${({ theme }) => theme.colors.secondary};
-    font-weight: bold;
-    font-size: 1.5em;
-
+    
     transition: 0.325s;
     &:hover {
       color: ${({ theme }) => theme.colors.effect};
@@ -68,7 +74,29 @@ export const Item = styled.li<MenuItemProps>`
 
     &:hover::after {
       width: 100%;
-      //transition: width .3s;
+      transition: width .3s;
+    }
+
+    padding: 5px 0;
+    font-weight: 700;
+    position: relative;
+    font-size: 1.5rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      transition: width 0.5s ease;
+      height: 2px;
+      background-color: $main-color;
+   }
+
+    &.active::after,
+    &:hover::after {
+      width: 100%;
     }
   }
 
