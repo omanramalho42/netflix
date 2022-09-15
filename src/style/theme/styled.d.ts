@@ -18,6 +18,8 @@ declare module 'styled-components' {
       secondary: string;
 
       header: string;
+
+      effect_shadow: string;
       effect: string;
     }
   }

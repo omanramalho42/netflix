@@ -8,7 +8,8 @@ const Dark: DefaultTheme = {
 
     header: '#d9d9d9',
     
-    effect: 'rgba(244,0,0)'
+    effect_shadow: 'rgba(244, 0, 0, 0.6)',
+    effect: 'rgba(244, 0, 0)'
   }
 }
 

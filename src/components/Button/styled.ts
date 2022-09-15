@@ -28,7 +28,7 @@ export const Container = styled.button<ButtonProps>`
   
   border-radius: 25px;
 
-  box-shadow: ${({ color }) => color === 'effect' && `0 0 12px 6px rgba(255, 0, 0, 0.5)`};
+  box-shadow: ${({ color, theme }) => color === 'effect' && `0 0 12px 6px ${theme.colors.effect_shadow}`};
 
   transition: 0.325s;
   &:hover {

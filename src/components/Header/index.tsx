@@ -52,7 +52,7 @@ const Header:React.FC = () => {
             <img src={'https://down.imgspng.com/download/0720/netflix_PNG22.png'} alt='logo' style={{ width: '125px' }} />
             {/* <Link to=''>Movies</Link> */}
           </Logo>
-
+          <ToggleSwitch />
           <Menu>
             {headerNav.map((e, i) => (
                 <Item
@@ -75,7 +75,7 @@ const Header:React.FC = () => {
         <Title>
           Welcome to my app netflix 🦇
         </Title>
-        <ToggleSwitch />
+        
       </Content> */}
 
     </Container>

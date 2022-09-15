@@ -6,7 +6,8 @@ const Light: DefaultTheme = {
     primary: '#fffff',
     secondary: '#000',
 
-    effect: 'rgba(0,0,255)',
+    effect_shadow: 'rgba(0, 0, 255, 0.6)',
+    effect: 'rgba(0, 0, 255)',
 
     header: '#f9f9f9'
   }
