@@ -15,7 +15,7 @@ const Button = ({
   return (
     <Container 
       color={color} 
-      onClick={() => onClick}
+      onClick={onClick}
     >
       { title }
     </Container>
