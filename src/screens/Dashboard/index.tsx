@@ -9,6 +9,7 @@ const Dashboard:React.FC = () => {
 
   return (
     <Layout 
+      loading={true}
       title='dashboard' 
       description='dashboard'
     >

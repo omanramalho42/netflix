@@ -11,7 +11,8 @@ import { Container } from './styled';
 
 const Home: React.FC = () => {
   return (
-    <Layout 
+    <Layout
+      loading={false}
       title='Home' 
       description='home'
     >

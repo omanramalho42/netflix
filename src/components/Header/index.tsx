@@ -39,7 +39,6 @@ const Header:React.FC = () => {
   ];
 
   const { pathname } = useLocation();
-  console.log(pathname,'pathname');
   const headerRef = useRef(null);
 
   const active = headerNav
@@ -61,7 +60,7 @@ const Header:React.FC = () => {
                   className={`${i === active ? 'active' : ''}`}
                 >
                   <span className='cool-link' >
-                    <a style={{ all: 'unset' }} href='/movies'> { e.display } </a>
+                    <a style={{ all: 'unset' }} href={e.path}> { e.display } </a>
                   </span>
                 </Item>
               ))}
