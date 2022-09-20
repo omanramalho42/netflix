@@ -18,7 +18,7 @@ import {
 
 interface HeaderProps {
   display: 'Home' | 'Movies' | 'Series';
-  path: '/' | '/movie' | '/series';
+  path: '/' | '/movies' | '/series';
 }
 
 const Header:React.FC = () => {
@@ -30,7 +30,7 @@ const Header:React.FC = () => {
     },
     {
       display: 'Movies',
-      path: '/movie',
+      path: '/movies',
     },
     {
       display: 'Series',
@@ -39,6 +39,7 @@ const Header:React.FC = () => {
   ];
 
   const { pathname } = useLocation();
+  console.log(pathname,'pathname');
   const headerRef = useRef(null);
 
   const active = headerNav
@@ -50,7 +51,6 @@ const Header:React.FC = () => {
         <HeaderBar>
           <Logo style={{ display: 'flex' }}>
             <img src={'https://down.imgspng.com/download/0720/netflix_PNG22.png'} alt='logo' style={{ width: '125px' }} />
-            {/* <Link to=''>Movies</Link> */}
           </Logo>
           <ToggleSwitch />
           <Menu>
@@ -60,8 +60,8 @@ const Header:React.FC = () => {
                   key={i} 
                   className={`${i === active ? 'active' : ''}`}
                 >
-                  <span className='cool-link'>
-                    { e.display }
+                  <span className='cool-link' >
+                    <a style={{ all: 'unset' }} href='/movies'> { e.display } </a>
                   </span>
                 </Item>
               ))}

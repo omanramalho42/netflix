@@ -10,11 +10,38 @@ import Modal from '../Modal';
 
 import './style.scss';
 
+interface MoviesProps {
+  id: number;
+  title: string;
+  img: string;
+  cardImg: string;
+  description: string;
+}
+
 const MovieSlider:React.FC = () => {
   SwiperCore.use([Autoplay]);
 
   const [show, setShow] = useState<boolean>(false);
   const [isActive, setIsActive] = useState(true);
+
+  const movies: MoviesProps[] = [ 
+    {
+      title: 'The walking dead',
+      cardImg: 'https://cutewallpaper.org/21/walking-dead-wallpaper-for-android/The-walking-dead-wallpaper-for-android-Group-Walking-dead-.jpg',
+      description: 'Os mortos voltam a vida e rick tem q salvar o mundo ou apenas tentar sobreviver.',
+      id: 0,
+      img: 'https://i.pinimg.com/originals/d7/b6/36/d7b636f3c6e99c231cf6018c872dd3db.jpg'
+    },
+    {
+      title: 'Free guy',
+      cardImg: 'https://rare-gallery.com/mocahbig/1386539-Free-Guy-Movie-Ryan-Reynolds-Jodie-Comer.jpg',
+      description: `Um filme envolvendo açao do começo ao fim em busca de grandes 
+      aventuras e fugindo do perigo a todo momento, inspirado em gta
+      esste homem vive em um mundo virtual`,
+      id: 1,
+      img: 'https://images8.alphacoders.com/108/thumb-1920-1083765.jpg',
+    }
+  ];
 
   return (
     <div style={{ marginBottom: '3rem' }}>
@@ -23,36 +50,30 @@ const MovieSlider:React.FC = () => {
           grabCursor={true}
           spaceBetween={0}
           slidesPerView={1}
-          autoplay={{delay: 3000}}
+          // autoplay={{ delay: 3000 }}
         >
-          {[
-            'https://images8.alphacoders.com/108/thumb-1920-1083765.jpg',
-            'https://images3.alphacoders.com/678/thumb-1920-678085.jpg',
-            'https://wallpaperaccess.com/full/496545.jpg'
-          ].map((i) => (
+          {movies.map(({ title, description, img, cardImg, id }, index) => (
             isActive && (
               <SwiperSlide 
-                key={i}
+                key={index}
               >
                 <Container>
                   <Modal 
                     buttonText='Watch trailer'
-                    children={<img src={i} alt='trailer' />}
+                    children={<img src={img} alt='trailer' />}
                     show={show} 
                     onClick={() => {}}
                     onClose={() => setShow(false)}
                   />
                   <div
                     className={`hero-slide__item active`}
-                    style={{ backgroundImage: `url(${i})`, opacity: `${show ? (0.2) : (1)}`}}
+                    style={{ backgroundImage: `url(${img})`, opacity: `${show ? (0.2) : (1)}`}}
                   >
                       <div className="hero-slide__item__content container">
                         <div className="hero-slide__item__content__info">
-                          <h2 className="title">Free guy</h2>
+                          <h2 className="title">{ title }</h2>
                           <div className="overview">
-                            Um filme envolvendo açao do começo ao fim em busca de grandes 
-                            aventuras e fugindo do perigo a todo momento, inspirado em gta
-                            esste homem vive em um mundo virtual
+                            { description }
                           </div>
                           <div className="btns">
                             <Button
@@ -68,7 +89,7 @@ const MovieSlider:React.FC = () => {
                           </div>
                         </div>
                         <CardMovie className="hero-slide__item__content__poster">
-                          <img src={i} alt="" />
+                          <img src={cardImg} alt='Card image trailer' />
                         </CardMovie>
                       </div>
                   </div>

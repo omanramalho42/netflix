@@ -118,9 +118,13 @@ const Movies: React.FC = () => {
     console.log({ genreMovies, genre }, 'filter');
   },[genre]);
 
+  useEffect(() => {
+    console.log({ lists} );
+  },[lists]);
+
   return (
     <>
-      <FilterContainer>
+      {/* <FilterContainer>
         <Label>filtro</Label>
         <Filter 
           value={filter} 
@@ -159,21 +163,21 @@ const Movies: React.FC = () => {
             </Card>
           ))}
         </Container>
-      )}
+      )} */}
       
-      {/* {lists?.map(({ title, type, content, _id }, index) => content && (
+      {lists?.map(({ title, type, content, _id }, index) => content && (
         <ContainerList movies={content.length} key={`${index}${_id}`}>
-          <label style={{ padding: 10, margin: 20 }}>{title} | {type}</label>
+          <label style={{ padding: 10, margin: 20 }}>{ title } | { type }</label>
           <CardList>
             {content.map((item, idx) => movies.map((i) => i._id.includes(item[index]) && (
-              <Card>
+              <Card tabIndex={idx}>
                 <Title>{ i.title || ''}</Title>
                 <Description>{ i.desc || '' }</Description> 
               </Card>
             )))}
           </CardList>
         </ContainerList>
-      ))} */}
+      ))}
       
     </>
   )

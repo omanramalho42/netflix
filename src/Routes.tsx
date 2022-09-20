@@ -9,7 +9,8 @@ import {
 
 import { 
   Home, 
-  Dashboard 
+  Dashboard, 
+  Movies
 } from './screens';
 
 const Routes:React.FC = () => {
@@ -17,6 +18,7 @@ const Routes:React.FC = () => {
     <BrowserRouter>
       <Router>
         <Route path='/' element={<Home />}/>
+        <Route path='movies' element={<Movies />} />
         <Route path='/dashboard' element={<Dashboard />}/>
       </Router>
     </BrowserRouter>
